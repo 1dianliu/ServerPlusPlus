@@ -1,0 +1,6 @@
+{
+  "rolling_gate.category.server_plus_plus": "SERVER++",
+
+  "server_plus_plus.rolling_gate.rule.welcome_player": "Welcome Player",
+  "server_plus_plus.rolling_gate.rule.welcome_player.desc": "Send welcome message when player logs in to server"
+}

@@ -1,0 +1,6 @@
+{
+  "rolling_gate.category.server_plus_plus": "服务器++",
+
+  "server_plus_plus.rolling_gate.rule.welcome_player": "欢迎玩家",
+  "server_plus_plus.rolling_gate.rule.welcome_player.desc": "当玩家登录到服务器时发送欢迎信息"
+}
