@@ -1,14 +1,14 @@
 package dev.anvilcraft.rg.spp.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.anvilcraft.rg.spp.ServerPlusPlusServerRules;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(Player.class)
 public abstract class PlayerCreativeNoClipMixin {
-    @ModifyExpressionValue(
+    @Redirect(
         method = {
             "tick()V",
             "aiStep()V",
@@ -20,10 +20,7 @@ public abstract class PlayerCreativeNoClipMixin {
             ordinal = 0
         )
     )
-    private boolean modifyAllSpectatorChecks(boolean original) {
-        Player player = (Player) (Object) this;
-        if (ServerPlusPlusServerRules.creativeNoClip && player.isCreative() && player.getAbilities().flying)
-            return true;
-        return original;
+    private boolean redirectAllSpectatorChecks(Player player) {
+        return player.isSpectator() || (ServerPlusPlusServerRules.creativeNoClip && player.isCreative() && player.getAbilities().flying);
     }
 }
