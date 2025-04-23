@@ -51,4 +51,10 @@ public class ServerPlusPlusServerRules {
     // 欢迎玩家
     @Rule(categories = ServerPlusPlus.MOD_ID)
     public static boolean welcomePlayer = false;
+    //创造玩家无碰撞检测
+    @Rule(
+        allowed = {"true", "false"},
+        categories = ServerPlusPlus.MOD_ID
+    )
+    public static boolean creativeNoClip = false;
 }

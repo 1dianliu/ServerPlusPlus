@@ -5,8 +5,13 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "server_plus_plus.refmap.json",
   "mixins": [
+    "BlockItemCreativeNoClipMixin",
+    "PlayerCreativeNoClipMixin",
+    "ShulkerBoxBlockEntityCreativeNoClipMixin",
+    "StandingAndWallBlockItemCreativeNoClipMixin"
   ],
   "client": [
+    "LevelRendererCreativeNoClipMixin"
   ],
   "injectors": {
     "defaultRequire": 1
